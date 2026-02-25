@@ -16,9 +16,20 @@ Input: arr[] = [10, 10, 10]
 Output: -1
 Explanation: The largest element of the array is 10 and the second largest element does not exist.
 
-class Solution {
-    public int getSecondLargest(int[] arr) {
+*/
+
+
+import java.util.*;
+class SecondLargest{
+    public static void main(String[]args){
+        Scanner sn=new Scanner(System.in);
         int first,second;
+        int n=sn.nextInt();
+        int[]arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sn.nextInt();
+        }
+        
         if(arr[0]>arr[1]){
             first=arr[0];
             second=arr[1];
@@ -26,18 +37,17 @@ class Solution {
             first=arr[1];
             second=arr[0];
         }
-        for(int i=2;i<arr.length;i++){
+        for(int i=2;i<n;i++){
             if(arr[i]>first){
                 second=first;
                 first=arr[i];
-            }else if(arr[i]>second && arr[i]<first){
-                second=arr[i];
             }else if(arr[i]==first && arr[i]==second){
                 second=-1;
             }
+            else if(arr[i]>second){
+                second=arr[i];
+            }
         }
-        return second;
+        System.out.println(second);
     }
 }
-
-*/

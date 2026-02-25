@@ -1,3 +1,4 @@
+/* 
 You are given a sorted array arr[] containing positive integers. Your task is to remove all duplicate elements from this array such that each element appears only once. Return an array containing these distinct elements in the same order as they appeared.
 Examples :
 
@@ -8,19 +9,21 @@ Input: arr[] = [1, 2, 4]
 Output: [1, 2, 4]
 Explation:  As the array does not contain any duplicates so you should return [1, 2, 4].
 
+*/
 
-class Solution {
-    ArrayList<Integer> removeDuplicates(int[] arr) {
- \
-        ArrayList<Integer>a=new ArrayList<>();
-        
-        a.add(arr[0]);
-        
-        for(int i=1;i<arr.length;i++){
-            if(arr[i]!=arr[i-1]){
-                a.add(arr[i]);
-            }
+import java.util.*;
+class RemoveDuplicate{
+    public static void main(String[]args){
+        Scanner sn=new Scanner(System.in);
+        int n=sn.nextInt();
+        int[]arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sn.nextInt();
         }
-        return a;
+        TreeSet<Integer>t=new TreeSet<>();
+        for(int num:arr){
+            t.add(num);
+        }
+        System.out.print(t);
     }
 }

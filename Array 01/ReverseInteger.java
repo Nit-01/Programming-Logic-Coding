@@ -1,3 +1,4 @@
+/*
 given an array of integers arr[]. You have to reverse the given array.
 Note: Modify the array in place.
 Examples:
@@ -9,17 +10,19 @@ Input: arr = [4, 5, 2]
 Output: [2, 5, 4]
 Explanation: The elements of the array are [4, 5, 2]. The reversed array will be [2, 5, 4].
 
-class Solution {
-    public void reverseArray(int arr[]) {
-        // code here
-        int start=0;
-        int end=arr.length-1;
-        while(start<end){
-            int temp=arr[start];
-            arr[start]=arr[end];
-            arr[end]=temp;
-            start++;
-            end--;
+*/
+
+import java.util.*;
+class ReverseInteger{
+    public static void main(String[]args){
+        Scanner sn=new Scanner(System.in);
+        int n=sn.nextInt();
+        int rev=0;
+        while(n>0){
+            int digit=n%10;
+            rev=rev*10+digit;
+            n=n/10;
         }
+        System.out.println(rev);
     }
 }

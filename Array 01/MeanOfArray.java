@@ -1,3 +1,4 @@
+/* 
 Given an unsorted array arr[], the task is to find the mean of the array. 
 
 Note: Return the floor value of the mean.
@@ -11,16 +12,23 @@ Input: arr[] = [4, 4, 4, 4, 4]
 Output: 4
 Explanation: Sum of the elements is 4 + 4 + 4 + 4 + 4 = 20, Mean = 20/5 = 4
 
+*/
 
 
-class Solution {
-    public static int findMean(int[] arr) {
-        // code here
-        int sum=0;
-        for(int n:arr){
-            sum+=n;
+import java.util.*;
+class MeanOfArray{
+    public static void main(String[]args){
+        Scanner sn=new Scanner(System.in);
+        int n=sn.nextInt();
+        int []arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sn.nextInt();
         }
-        int mean=sum/arr.length;
-        return mean;
+        int sum=0;
+        for(int num:arr){
+            sum+=num;
+        }
+        int mean=sum/n;
+        System.out.println(mean);
     }
-};
+}
