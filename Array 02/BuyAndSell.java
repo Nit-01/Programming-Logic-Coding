@@ -1,3 +1,4 @@
+/*
 Given an array prices[] of non-negative integers, representing the prices of the stocks on different days. The task is to find the maximum profit possible by buying and selling the stocks on different days when at most one transaction is allowed. 
 Here one transaction means 1 buy + 1 Sell. If it is not possible to make a profit then return 0.
 
@@ -12,23 +13,28 @@ Input: prices[] = [7, 6, 4, 3, 1]
 Output: 0 
 Explanation: Here the prices are in decreasing order, hence if we buy any day then we cannot sell it at a greater price. Hence, the answer is 0.
 
+*/
 
-class Solution {
-    public int maxProfit(int[] prices) {
 
-        int minPrice = prices[0];
-        int maxProfit = 0;
+import java.util.*;
+class BuyAndSell{
+    public static void main(String[]args){
+        Scanner sn=new Scanner(System.in);
+        int n=sn.nextInt();
+        int[]prices=new int[n];
+        for(int i=0;i<n;i++){
+            prices[i]=sn.nextInt();
+        }
+        int minprofit=prices[0];
+        int maxprofit=0;
 
-        for(int i = 1; i < prices.length; i++){
-
-            if(prices[i] < minPrice){
-                minPrice = prices[i];
-            }
-            else{
-                maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+        for(int i=1;i<n;i++){
+            if(prices[i]<minprofit){
+                minprofit=prices[i];;
+            }else{
+                maxprofit=Math.max(maxprofit,prices[i]-minprofit);
             }
         }
-
-        return maxProfit;
+        System.out.println(maxprofit);
     }
 }
